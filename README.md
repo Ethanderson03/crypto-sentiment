@@ -1,117 +1,80 @@
-# Crypto Fear & Greed Analysis
+# Crypto Fear & Greed Trading Analysis
 
-This project analyzes the relationship between the Crypto Fear & Greed Index and cryptocurrency price movements. It creates an interactive dashboard showing how market sentiment correlates with future returns across multiple cryptocurrencies.
+This project combines sentiment analysis using the Fear & Greed index with reinforcement learning to develop and test cryptocurrency trading strategies.
+
+## Project Structure
+
+```
+.
+├── fear_greed_analysis/    # Analysis of Fear & Greed index correlation with crypto prices
+│   ├── crypto_sentiment_analysis.py
+│   └── README.md
+│
+├── trading_bot/            # Reinforcement learning trading bot implementation
+│   ├── trading_env.py
+│   ├── evaluate_model.py
+│   ├── train_rl_trader.py
+│   ├── crypto_trading_env.py
+│   └── README.md
+│
+├── requirements.txt        # Project dependencies
+└── README.md              # This file
+```
 
 ## Features
 
-- Multi-cryptocurrency analysis (BTC, ETH, BNB, XRP, SOL, ADA)
-- Interactive dashboard with tabbed interface
-- Sentiment correlation analysis
-- Return magnitude analysis by sentiment level
-- Risk-adjusted returns analysis
+- Comprehensive analysis of Fear & Greed index's impact on crypto prices
+- Reinforcement learning-based trading bot using sentiment and technical indicators
+- Interactive visualizations of analysis results and trading performance
+- Support for multiple cryptocurrencies
+- Backtesting framework for strategy evaluation
 
 ## Installation
 
 1. Clone the repository:
 
-```
-git clone [your-repo-url]
+```bash
+git clone [repository-url]
 ```
 
-2. Install required packages:
+2. Install dependencies:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
 ## Usage
 
-Run the analysis:
+1. Run Fear & Greed Analysis:
 
-```
+```bash
+cd fear_greed_analysis
 python crypto_sentiment_analysis.py
 ```
 
-This will:
+2. Train the Trading Bot:
 
-1. Fetch the latest Fear & Greed Index data
-2. Download cryptocurrency price data
-3. Generate an interactive HTML dashboard
-4. Open the dashboard in your default browser
+```bash
+cd trading_bot
+python train_rl_trader.py
+```
 
-## Dashboard Components
+3. Evaluate Trading Performance:
 
-### Predictive Analysis
-
-- Price vs Fear & Greed Index visualization
-- Rolling correlation between sentiment and future returns
-- Prediction accuracy tracking over time
-- Color-coded extreme fear and greed zones
-
-### Magnitude Analysis
-
-- Return distribution by sentiment level (box plots)
-- Average returns for each sentiment category
-- Risk (volatility) analysis
-- Risk-adjusted return metrics
-
-## Analysis Methodology
-
-The analysis examines three time windows:
-
-- 7-day forward returns
-- 14-day forward returns
-- 30-day forward returns
-
-For each period, it analyzes:
-
-- Correlation between sentiment and returns
-- Return magnitude during different sentiment levels
-- Risk-adjusted performance metrics
-- Prediction accuracy of sentiment signals
-
-## Sentiment Categories
-
-The Fear & Greed Index (0-100) is divided into:
-
-- Extreme Fear (0-25)
-- Fear (26-45)
-- Neutral (46-55)
-- Greed (56-75)
-- Extreme Greed (76-100)
-
-## Data Sources
-
-- Fear & Greed Index: [Alternative.me API](https://alternative.me/crypto/fear-and-greed-index/)
-- Cryptocurrency prices: Yahoo Finance via `yfinance`
-
-## Results Interpretation
-
-The dashboard helps identify:
-
-- Optimal trading windows based on sentiment
-- Risk-adjusted return opportunities
-- Market psychology patterns
-- Contrarian investment opportunities
+```bash
+cd trading_bot
+python evaluate_model.py
+```
 
 ## Dependencies
 
-- pandas: Data manipulation and analysis
-- plotly: Interactive visualizations
-- yfinance: Cryptocurrency price data
-- requests: API calls
+- Python 3.8+
+- PyTorch
+- Stable-Baselines3
+- Pandas
+- NumPy
+- Plotly
+- yfinance
+- requests
 
-## Notes
-
-- The dashboard is generated as an HTML file for interactive exploration
-- Historical data is limited to 365 days
-- All returns are calculated on a forward-looking basis
-- Risk-adjusted returns use a Sharpe-like ratio calculation
-
-## Contributing
-
-Feel free to fork the repository and submit pull requests with improvements or additional features.
-
-## License
-
-MIT License - feel free to use this code for any purpose.
+See `requirements.txt` for complete list of dependencies.

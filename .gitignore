@@ -4,7 +4,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
 build/
 develop-eggs/
 dist/
@@ -23,15 +22,27 @@ wheels/
 
 # Virtual Environment
 venv/
+env/
 ENV/
 
-# Generated files
-*.html
-*.csv
-
-# IDE specific files
+# IDEs
 .idea/
 .vscode/
 *.swp
 *.swo
-.DS_Store 
+
+# Project specific
+*.html
+model_checkpoints/
+best_model/
+logs/
+*.log
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# OS specific
+.DS_Store
+.env
+.env.local
